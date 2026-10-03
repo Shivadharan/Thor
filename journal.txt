@@ -1,0 +1,51 @@
+QUESTION:
+
+Write python code to make a text classiÿier where the output is to convey iÿ the text is a positive or neĀative
+statement, download and use pre-existinĀ AI Text-Classiÿier models ÿrom online sources like media pipe solutions
+ÿor the text classiÿication, the output should be a percentaĀe oÿ positivity and neĀativity in the statement.
+
+THOR-TEXT BASED HUMAN OPINION READER
+
+so lets start with the simplest form of textclassifier that i could think of... a set of rules from where you 
+check to say if a statemnt is positive of negative and calculating percentage from the amound of the set in the text entered
+(thor-1)
+
+https://youtu.be/O2L2Uv9pdDA?si=QeGuqf7OgFfyEcEy
+concpet of navie bayes ... same as probabiloty but a better matemitical way of representatiion
+and also using machine learning i could teach the weight of eack words from the frequency of times a word has occured in a positve or negative word
+
+so first i need to make a pipline that give (says) a path for converting the text to vecotrs with weight
+TF-IDF = Term Frequency × Inverse Document Frequency
+this is done to train my model so i use sklearn == scikit-learn do all the manuplations
+then pass it through navie bayers
+
+
+
+so the problem that comes here is the presence of large amount of words to serch from that i cant physically enter
+
+now the need for existing dataset come in picture (serch for real word data):
+
+now why navie bayes is bad ... cuz it treats all words equal but if u think about it love has more power than like
+right so i must add more weigth to to each words to come to a conclusion
+
+The math (core idea)
+
+The model learns this function:
+
+z = w₁x₁ + w₂x₂ + ... + b
+probability = 1 / (1 + e⁻ᶻ)
+
+
+Where:
+
+x = word features (from TF-IDF)
+
+w = learned weights
+
+b = bias
+
+
+
+but it can identify small stuff like a baby but its still naive cuz we assume each letter indipendent not 
+a stream so context get bad
+
